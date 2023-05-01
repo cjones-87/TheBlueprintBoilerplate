@@ -1,0 +1,25 @@
+{
+  "name": "theblueprintboilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjones-87/TheBlueprintBoilerplate.git"
+  },
+  "keywords": [],
+  "author": "CJ Jones of www.seejonesengineer.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjones-87/TheBlueprintBoilerplate/issues"
+  },
+  "homepage": "https://github.com/cjones-87/TheBlueprintBoilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
