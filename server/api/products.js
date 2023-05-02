@@ -1,8 +1,9 @@
+const { Product } = require('../db');
 const router = require('express').Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    const products = Product.findAll();
+    const products = await Product.findAll();
     res.json(products);
   } catch (error) {
     console.log('error retrieving all products');
@@ -12,7 +13,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:productId', async (req, res, next) => {
   try {
-    const product = Product.findByPk(+req.params.productId);
+    const product = await Product.findByPk(+req.params.productId);
     res.json(product);
   } catch (error) {
     console.log('error retrieving single product');
