@@ -1,18 +1,28 @@
+const path = require('path');
+
 module.exports = {
-  entry: ['./src/index.jsx'],
+  entry: './src/index.jsx',
   output: {
-    path: __dirname,
-    filename: './public/bundle.js',
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].chunk.js',
   },
   devtool: 'source-map',
+  resolve: {
+    modules: [__dirname, 'src', 'node_modules'],
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-react'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-syntax-dynamic-import'],
+          },
         },
       },
       {
@@ -21,4 +31,5 @@ module.exports = {
       },
     ],
   },
+  mode: 'development',
 };
