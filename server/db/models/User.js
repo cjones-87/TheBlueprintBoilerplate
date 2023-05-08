@@ -31,13 +31,7 @@ const User = db.define('user', {
   billingAddress: {
     type: Sequelize.STRING,
   },
-  shippingAddress: {
-    type: Sequelize.STRING,
-  },
   billingCity: {
-    type: Sequelize.STRING,
-  },
-  shippingCity: {
     type: Sequelize.STRING,
   },
   billingPostalCode: {
@@ -46,7 +40,13 @@ const User = db.define('user', {
       is: /^\d{5}(-\d{4})?$/,
     },
   },
-  shipppingPostalCode: {
+  shippingAddress: {
+    type: Sequelize.STRING,
+  },
+  shippingCity: {
+    type: Sequelize.STRING,
+  },
+  shippingPostalCode: {
     type: Sequelize.INTEGER,
     validate: {
       is: /^\d{5}(-\d{4})?$/,
