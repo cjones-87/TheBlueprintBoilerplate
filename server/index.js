@@ -1,6 +1,6 @@
 const { db } = require('./db');
 const app = require('./app');
-const port = process.env.port || 3000;
+const port = process.env.port || 1987;
 
 const init = async () => {
   try {

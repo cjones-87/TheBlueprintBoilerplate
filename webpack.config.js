@@ -7,6 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: '[name].chunk.js',
   },
+  devServer: {
+    port: 1987,
+  },
   devtool: 'source-map',
   resolve: {
     modules: [__dirname, 'src', 'node_modules'],
@@ -28,6 +31,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       },
     ],
   },
