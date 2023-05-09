@@ -1,7 +1,7 @@
 const LoginFormData = [
-  { label: 'Email: ', type: 'email' },
-  { label: 'Username: ', type: 'text' },
-  { label: 'Password: ', type: 'text' },
+  { autoComplete: 'email', label: 'Email: ', type: 'email' },
+  { autoComplete: 'username', label: 'Username: ', type: 'text' },
+  { autoComplete: 'current-password', label: 'Password: ', type: 'password' },
 ];
 
 export default LoginFormData;
