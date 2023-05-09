@@ -1,9 +1,9 @@
 const RegistrationFormData = [
-  { label: 'First Name: ', type: 'text' },
-  { label: 'Last Name: ', type: 'text' },
-  { label: 'Username: ', type: 'text' },
-  { label: 'Password: ', type: 'text' },
-  { label: 'Email: ', type: 'email' },
+  { autoComplete: 'given-name', label: 'First Name: ', type: 'text' },
+  { autoComplete: 'family-name', label: 'Last Name: ', type: 'text' },
+  { autoComplete: 'username', label: 'Username: ', type: 'text' },
+  { autoComplete: 'new-password', label: 'Password: ', type: 'password' },
+  { autoComplete: 'email', label: 'Email: ', type: 'email' },
 ];
 
 export default RegistrationFormData;
