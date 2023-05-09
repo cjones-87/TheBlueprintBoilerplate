@@ -10,17 +10,27 @@ const RegistrationForm = () => {
   const registrationRefs = [firstName, lastName, username, password, email];
 
   return (
-    <>
-      <form id="registrationForm">
-        <h1 className="center">Registration</h1>
+    <form id="registrationForm">
+      <div className="authForm">
+        <h1 className="center" id="authHeader">
+          Registration
+        </h1>
         {RegistrationFormData.map((data, index) => (
-          <label className="authForm" key={index}>
-            {data.label}
-            <input ref={registrationRefs[index]} type={data.type} />
-          </label>
+          <div className="authForm" key={index}>
+            <div className="inputContainer">
+              <input
+                autoComplete={data.autoComplete}
+                ref={registrationRefs[index]}
+                type={data.type}
+              />
+              <label>{data.label} </label>
+            </div>
+          </div>
         ))}
-      </form>
-    </>
+
+        <button className="formButton">Submit</button>
+      </div>
+    </form>
   );
 };
 
