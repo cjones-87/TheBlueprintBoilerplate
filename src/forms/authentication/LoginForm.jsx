@@ -9,13 +9,25 @@ const LoginForm = () => {
 
   return (
     <form id="loginForm">
-      <h1 className="center">Login</h1>
-      {LoginFormData.map((data, index) => (
-        <label className="authForm" key={index}>
-          {data.label}
-          <input ref={loginRefs[index]} type={data.type} />
-        </label>
-      ))}
+      <div className="authForm">
+        <h1 className="center" id="authHeader">
+          Login
+        </h1>
+        {LoginFormData.map((data, index) => (
+          <div className="authForm" key={index}>
+            <div className="inputContainer">
+              <input
+                autoComplete={data.autoComplete}
+                ref={loginRefs[index]}
+                type={data.type}
+              />
+              <label>{data.label}</label>
+            </div>
+          </div>
+        ))}
+
+        <button className="formButton">Submit</button>
+      </div>
     </form>
   );
 };
