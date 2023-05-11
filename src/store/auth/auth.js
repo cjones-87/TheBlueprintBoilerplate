@@ -41,10 +41,13 @@ export const logout = () => {
   };
 };
 
-const authReducer = (state = {}, action) => {
+const authReducer = (
+  state = { token: localStorage.getItem('token') || null },
+  action
+) => {
   switch (action.type) {
     case SET_AUTH:
-      return action.auth;
+      return { token: action.auth.token };
     default:
       return state;
   }
