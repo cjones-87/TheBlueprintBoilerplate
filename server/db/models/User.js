@@ -73,6 +73,7 @@ User.prototype.correctPassword = function (userPassword) {
 };
 
 User.prototype.generateToken = function () {
+  if (!process.env.JWT) throw new Error('JWT secret key is missing or not set');
   return jwt.sign({ id: this.id }, process.env.JWT);
 };
 
