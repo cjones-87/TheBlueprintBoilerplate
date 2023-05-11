@@ -13,7 +13,8 @@ router.post('/login', async (req, res, next) => {
 router.post('/registration', async (req, res, next) => {
   try {
     const user = await User.create(req.body);
-    res.json({ token: await user.generateToken() });
+    const token = await user.generateToken();
+    res.json({ token, user });
   } catch (error) {
     error.name === 'SequelizeUniqueConstraintError'
       ? res.status(401).json('This user already exists')
