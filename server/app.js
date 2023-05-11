@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', require('./api'));
+app.use('/auth', require('./auth'));
 
 app.get('*', (req, res, next) =>
   res.sendFile(path.join(__dirname, '..', '/public/index.html'))
