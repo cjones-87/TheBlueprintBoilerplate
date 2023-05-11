@@ -1,16 +1,57 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authenticate } from '../../store/auth/auth';
+import axios from 'axios';
 import RegistrationFormData from '../formData/authentication/RegistrationFormData';
 
 const RegistrationForm = () => {
-  const firstName = useRef();
-  const lastName = useRef();
-  const username = useRef();
-  const password = useRef();
-  const email = useRef();
-  const registrationRefs = [firstName, lastName, username, password, email];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+  const emailRef = useRef();
+
+  const registrationRefs = [
+    firstNameRef,
+    lastNameRef,
+    usernameRef,
+    passwordRef,
+    emailRef,
+  ];
+
+  const handleRegistration = async (event) => {
+    event.preventDefault();
+    try {
+      const formData = {
+        firstName: firstNameRef.current.value,
+        lastName: lastNameRef.current.value,
+        username: usernameRef.current.value,
+        password: passwordRef.current.value,
+        email: emailRef.current.value,
+      };
+
+      const res = await axios.post('/auth/registration', formData);
+      localStorage.setItem('token', res.data.token);
+      dispatch(
+        authenticate(
+          formData.email,
+          formData.username,
+          formData.password,
+          'login'
+        )
+      );
+      navigate('/');
+    } catch (error) {
+      console.log('There was an error handling registration', error);
+    }
+  };
 
   return (
-    <form id="registrationForm">
+    <form id="registrationForm" onSubmit={handleRegistration}>
       <div className="authForm">
         <h1 className="center" id="authHeader">
           Registration
@@ -20,15 +61,19 @@ const RegistrationForm = () => {
             <div className="inputContainer">
               <input
                 autoComplete={data.autoComplete}
-                ref={registrationRefs[index]}
+                name={data.name}
+                required
                 type={data.type}
+                ref={registrationRefs[index]}
               />
               <label>{data.label} </label>
             </div>
           </div>
         ))}
 
-        <button className="formButton">Submit</button>
+        <button className="formButton" type="submit">
+          Submit
+        </button>
       </div>
     </form>
   );
