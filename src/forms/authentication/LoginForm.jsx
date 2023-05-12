@@ -9,31 +9,20 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const emailRef = useRef();
-  const usernameRef = useRef();
+  const identifierRef = useRef();
   const passwordRef = useRef();
-
-  const loginRefs = [emailRef, usernameRef, passwordRef];
 
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const formData = {
-        username: usernameRef.current.value,
+        identifier: identifierRef.current.value,
         password: passwordRef.current.value,
-        email: emailRef.current.value,
       };
 
       const res = await axios.post('/auth/login', formData);
       localStorage.setItem('token', res.data.token);
-      dispatch(
-        authenticate(
-          formData.email,
-          formData.username,
-          formData.password,
-          'login'
-        )
-      );
+      dispatch(authenticate(formData.identifier, formData.password, 'login'));
       navigate('/');
     } catch (error) {
       console.log('There was an error handling login', error);
@@ -52,7 +41,7 @@ const LoginForm = () => {
               <input
                 autoComplete={data.autoComplete}
                 name={data.name}
-                ref={loginRefs[index]}
+                ref={index === 0 ? identifierRef : passwordRef}
                 required
                 type={data.type}
               />
