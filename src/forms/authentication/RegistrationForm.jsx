@@ -62,9 +62,9 @@ const RegistrationForm = () => {
               <input
                 autoComplete={data.autoComplete}
                 name={data.name}
+                ref={registrationRefs[index]}
                 required
                 type={data.type}
-                ref={registrationRefs[index]}
               />
               <label>{data.label} </label>
             </div>
