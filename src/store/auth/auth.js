@@ -3,6 +3,7 @@ import axios from 'axios';
 const TOKEN = 'token';
 
 const SET_AUTH = 'SET_AUTH';
+const LOGOUT = {};
 
 const setAuth = (auth) => ({
   type: SET_AUTH,
@@ -21,9 +22,13 @@ export const me = () => async (dispatch) => {
 };
 
 export const authenticate =
-  (username, password, method) => async (dispatch) => {
+  (email, username, password, method) => async (dispatch) => {
     try {
-      const res = await axios.post(`/auth/${method}`, { username, password });
+      const res = await axios.post(`/auth/${method}`, {
+        email,
+        username,
+        password,
+      });
       localStorage.setItem(TOKEN, res.data.token);
       dispatch(me());
     } catch (error) {
@@ -34,20 +39,31 @@ export const authenticate =
 
 export const logout = () => {
   localStorage.removeItem(TOKEN);
-  history.push('/login');
   return {
     type: SET_AUTH,
-    auth: {},
+    auth: LOGOUT,
   };
 };
 
 const authReducer = (
-  state = { token: localStorage.getItem('token') || null },
+  state = {
+    token: localStorage.getItem('token') || null,
+    isAuthenticated: !!localStorage.getItem('token'),
+  },
   action
 ) => {
   switch (action.type) {
     case SET_AUTH:
-      return { token: action.auth.token };
+      return {
+        ...state,
+        token: action.auth.token,
+        isAuthenticated: true,
+      };
+    case LOGOUT:
+      return {
+        token: null,
+        isAuthenticated: false,
+      };
     default:
       return state;
   }
