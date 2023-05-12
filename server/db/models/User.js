@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const db = require('../db');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -78,11 +79,15 @@ User.prototype.generateToken = function () {
 };
 
 // Class Methods
-User.authenticate = async function ({ username, password }) {
-  const user = await this.findOne({ where: { username } });
+User.authenticate = async function ({ identifier, password }) {
+  const user = await this.findOne({
+    where: {
+      [Op.or]: [{ username: identifier }, { email: identifier }],
+    },
+  });
 
   if (!user || !(await user.correctPassword(password))) {
-    const error = Error('Incorrect username &/or password');
+    const error = Error('Incorrect username, email, &/or password');
     error.status = 401;
     throw error;
   }
