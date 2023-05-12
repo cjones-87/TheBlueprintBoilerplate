@@ -1,9 +1,8 @@
 const LoginFormData = [
-  { autoComplete: 'email', label: 'Email: ', name: 'email', type: 'email' },
   {
-    autoComplete: 'username',
-    label: 'Username: ',
-    name: 'username',
+    autoComplete: 'email username',
+    label: 'Email/Username: ',
+    name: 'identifier',
     type: 'text',
   },
   {
