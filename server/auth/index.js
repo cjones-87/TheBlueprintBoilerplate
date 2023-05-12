@@ -3,7 +3,8 @@ const { User } = require('../db');
 
 router.post('/login', async (req, res, next) => {
   try {
-    res.json({ token: await User.authenticate(req.body) });
+    const { identifier, password } = req.body;
+    res.json({ token: await User.authenticate({ identifier, password }) });
   } catch (error) {
     console.log('Error logging in');
     next(error);
