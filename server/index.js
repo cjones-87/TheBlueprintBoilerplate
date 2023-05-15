@@ -6,9 +6,10 @@ const port = process.env.PORT || 1987;
 const init = async () => {
   try {
     await db.sync().then(() => {
-      console.log('Knock, knock');
-      console.log("Who's there?");
-      console.log(`Your server, listening on port ${port}`);
+      console.log(
+        `Knock, knock...\nWho's there?\nYour server, listening on port ${port}`
+      );
+
       app.listen(port);
     });
   } catch (error) {
