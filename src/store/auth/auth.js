@@ -14,7 +14,7 @@ export const me = () => async (dispatch) => {
   const token = localStorage.getItem(TOKEN);
 
   if (token) {
-    const res = await axios.get('/auth/me', {
+    const res = await axios.get('/api/users/me', {
       headers: { authorization: token },
     });
     return dispatch(setAuth(res.data));
@@ -31,7 +31,6 @@ export const authenticate =
       localStorage.setItem(TOKEN, res.data.token);
       dispatch(me());
     } catch (error) {
-      console.log('Error in authenticate action creator');
       return dispatch(setAuth({ error }));
     }
   };
