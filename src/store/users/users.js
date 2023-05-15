@@ -8,12 +8,11 @@ const fetchAllUsers = (userList) => ({
 });
 
 export const fetchAllUsersThunk = () => {
-  async (dispatch) => {
+  return async (dispatch) => {
     try {
       const { data } = await axios.get('/api/users/');
       dispatch(fetchAllUsers(data));
     } catch (error) {
-      console.log('There was an error retrieving all users in your thunk');
       console.error(error);
     }
   };
