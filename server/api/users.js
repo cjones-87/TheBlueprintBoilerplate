@@ -6,7 +6,16 @@ router.get('/', async (req, res, next) => {
     const users = await User.findAll();
     res.json(users);
   } catch (error) {
-    console.log('error retrieving all users');
+    next(error);
+  }
+});
+
+router.get('/me', async (req, res, next) => {
+  try {
+    const token = await req.headers.authorization;
+    const user = await User.findByToken(token);
+    res.json(user);
+  } catch (error) {
     next(error);
   }
 });
@@ -16,7 +25,6 @@ router.get('/:userId', async (req, res, next) => {
     const user = await User.findByPk(+req.params.userId);
     res.json(user);
   } catch (error) {
-    console.log('error retrieving single user');
     next(error);
   }
 });
