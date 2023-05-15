@@ -1,17 +1,25 @@
 import React, { lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import FrontendRouteData from './FrontendRouteData';
 
 const Navbar = lazy(() => import('../components/navbar/Navbar'));
+const LandingPage = lazy(() => import('../views/landing/LandingPage.jsx'));
+const Login = lazy(() => import('../views/authentication/Login.jsx'));
+const Registration = lazy(() =>
+  import('../views/authentication/Registration.jsx')
+);
 
-const NavigationRoutes = () => {
+const NavigationRoutes = (props) => {
+  const user = props.user;
+
   return (
     <BrowserRouter>
       <Navbar>
         <Routes>
-          {FrontendRouteData.map((route, index) => (
-            <Route element={route.element} key={index} path={route.path} />
-          ))}
+          <>
+            <Route path="/" element={<LandingPage user={user} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+          </>
         </Routes>
       </Navbar>
     </BrowserRouter>
