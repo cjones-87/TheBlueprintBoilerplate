@@ -4,9 +4,10 @@ const { User } = require('../db');
 router.post('/login', async (req, res, next) => {
   try {
     const { identifier, password } = req.body;
-    res.json({ token: await User.authenticate({ identifier, password }) });
+    const token = await User.authenticate({ identifier, password });
+    const user = await User.findByToken(token);
+    res.json({ token, user });
   } catch (error) {
-    console.log('Error logging in');
     next(error);
   }
 });
