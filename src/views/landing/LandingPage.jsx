@@ -1,16 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-const LandingPage = () => {
-  const auth = useSelector((state) => state.authReducer);
+const LandingPage = (props) => {
+  const user = props.user;
 
   return (
     <div className="center">
       <h1>CJ's Blueprint Boilerplate</h1>
-      {auth && auth.isAuthenticated ? (
-        <div>Welcome User!</div>
+      {user.id ? (
+        <div>Welcome {user.username}!</div>
       ) : (
-        <div>Welcome!</div>
+        <div>Welcome, Guest!</div>
       )}
     </div>
   );
