@@ -42,7 +42,7 @@ router.put('/:productId', async (req, res, next) => {
   }
 });
 
-router.delete('/:projectId', async (req, res, next) => {
+router.delete('/:productId', async (req, res, next) => {
   try {
     const projectBeingDeleted = await Project.findByPk(+req.params.projectId);
     const wasDeleted = await projectBeingDeleted.destroy({ ...req.body });
