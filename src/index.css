@@ -1,5 +1,7 @@
 body {
-  background-color: silver;
+  background: radial-gradient(indigo, rgba(163, 0, 130, 1));
+  background-size: cover;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -8,6 +10,15 @@ body {
   justify-self: center;
   margin: 0.75em;
   text-align: center;
+}
+
+#landingPage {
+  color: silver;
+  text-shadow: 1px 1px 1px black;
+}
+
+#landingPage:hover {
+  color: dodgerblue;
 }
 
 #loadingSpinner {
@@ -20,7 +31,7 @@ body {
 /* auth forms */
 
 #authHeader {
-  color: indigo;
+  color: silver;
   text-shadow: 2px 2px 2px black;
 }
 
@@ -33,7 +44,6 @@ body {
   text-align: left;
 }
 
-#loginFormContainer,
 #registrationFormContainer {
   font-size: 1vmin;
   margin-bottom: 10em;
@@ -56,7 +66,7 @@ body {
 #loginForm input,
 #registrationForm input {
   align-items: flex-end;
-  background-color: greenyellow;
+  background-color: silver;
   display: block;
   margin-bottom: 1.75em;
   min-width: 5em;
@@ -108,7 +118,7 @@ input:not(:placeholder-shown) ~ label {
 
 .formButton {
   align-items: center;
-  background-color: greenyellow;
+  background-color: silver;
   border: 2px solid indigo;
   color: indigo;
   cursor: pointer;
@@ -137,7 +147,7 @@ a {
 
 .navbar {
   align-items: center;
-  background-color: indigo;
+  background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
   display: flex;
   justify-content: space-between;
   min-height: 70px;
@@ -222,7 +232,7 @@ a {
   }
 
   .navMenu {
-    background-color: indigo;
+    background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
     flex-direction: column;
     gap: 0;
     left: -120%;
