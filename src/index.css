@@ -248,6 +248,6 @@ a {
   }
 
   .navMenu.active {
-    left: 0;
+    left: -5%;
   }
 }
