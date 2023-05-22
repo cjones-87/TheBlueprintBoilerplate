@@ -6,11 +6,7 @@ const LandingPage = (props) => {
   return (
     <div className="center" id="landingPage">
       <h1>CJ's Blueprint Boilerplate</h1>
-      {user.id ? (
-        <div>Welcome {user.username}!</div>
-      ) : (
-        <div>Welcome, Guest!</div>
-      )}
+      {user.id ? <h2>Welcome {user.username}!</h2> : <h2>Welcome, Guest!</h2>}
     </div>
   );
 };
