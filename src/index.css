@@ -8,7 +8,6 @@ body {
 
 .center {
   justify-self: center;
-  margin: 0.75em;
   text-align: center;
 }
 
@@ -32,6 +31,7 @@ body {
 
 #authHeader {
   color: silver;
+  font-size: 5em;
   text-shadow: 2px 2px 2px black;
 }
 
@@ -53,23 +53,22 @@ body {
 #registrationForm {
   display: flex;
   flex-direction: column;
-  font-size: 5em;
 }
 
 #loginForm label,
 #registrationForm label {
   align-items: flex-start;
   display: block;
-  min-width: 5em;
 }
 
 #loginForm input,
 #registrationForm input {
   align-items: flex-end;
   background-color: silver;
+  border-radius: 10px;
   display: block;
   margin-bottom: 1.75em;
-  min-width: 5em;
+  width: 50vw;
 }
 
 #loginForm input:hover,
@@ -120,14 +119,15 @@ input:not(:placeholder-shown) ~ label {
   align-items: center;
   background-color: silver;
   border: 2px solid indigo;
+  border-radius: 10px;
   color: indigo;
   cursor: pointer;
   display: flex;
-  font-size: 0.75em;
-  height: 1.5em;
+  font-size: 1.5em;
+  height: 2em;
   justify-content: center;
-  margin: 0.87em;
-  width: 100%;
+  margin: auto;
+  width: 15%;
 }
 
 .formButton:hover {
@@ -249,5 +249,9 @@ a {
 
   .navMenu.active {
     left: -5%;
+  }
+
+  .formButton {
+    border-radius: 5px;
   }
 }
