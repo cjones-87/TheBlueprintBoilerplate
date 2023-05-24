@@ -30,11 +30,9 @@ const LoginForm = () => {
   };
 
   return (
-    <form id="loginForm" onSubmit={handleLogin}>
+    <form className="center" id="loginForm" onSubmit={handleLogin}>
       <div className="authForm">
-        <h1 className="center" id="authHeader">
-          Login
-        </h1>
+        <h1 id="authHeader">Login</h1>
         {LoginFormData.map((data, index) => (
           <div className="authForm" key={index}>
             <div className="inputContainer">
