@@ -1,6 +1,6 @@
 # <span style="color:indigo;">The Blueprint Boilerplate</span>
 
-The Blueprint Boilerplate is a full-stack boilerplate template that provides a solid foundation for building web applications. It includes out-of-the-box essential features such as:
+The Blueprint Boilerplate is a full-stack eCommerce boilerplate template that provides a solid foundation for building eCommerce web applications. It includes out-of-the-box essential features such as:
 
 - CRUD (Create, Read, Update, Delete) express routes for products and users
 - authenticated routes for accessing personal information of logged-in users
