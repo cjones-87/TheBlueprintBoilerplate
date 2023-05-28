@@ -9,6 +9,10 @@ The Blueprint Boilerplate is a full-stack eCommerce boilerplate template that pr
 
 This template also incorporates conditional rendering to differentiate between guest and logged-in user experiences.
 
+## <span style="color:indigo;">Demo</span>
+
+![LoginLoop](https://i.imgur.com/HOiTb5v.gif)
+
 ## <span style="color:indigo;">Technologies Used</span>
 
 ### <span style="color:#ba69c8;">Front-end</span>
