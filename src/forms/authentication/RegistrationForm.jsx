@@ -45,6 +45,7 @@ const RegistrationForm = () => {
         )
       );
       navigate('/');
+      location.reload();
     } catch (error) {
       console.log('There was an error handling registration', error);
     }
