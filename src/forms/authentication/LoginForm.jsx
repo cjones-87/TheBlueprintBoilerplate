@@ -24,6 +24,7 @@ const LoginForm = () => {
       localStorage.setItem('token', res.data.token);
       dispatch(authenticate(formData.identifier, formData.password, 'login'));
       navigate('/');
+      location.reload();
     } catch (error) {
       console.log('There was an error handling login', error);
     }
