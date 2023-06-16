@@ -1,4 +1,8 @@
-# <span style="color:indigo;">The Blueprint Boilerplate</span>
+<!-- Header -->
+
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:301D42,10:553373,20:7a49a5,30:6D4194,40:A17FC0,50:C9B6DB,60:A17FC0,70:6D4194,80:7a49a5,90:553373,100:301D42&height=180&text=CJ%20Jones&fontAlignY=35&animation=scaleIn&desc=Software%20Engineer&descAlign=80&descAlignY=59&descSize=30)
+
+# The Blueprint Boilerplate
 
 The Blueprint Boilerplate is a full-stack eCommerce boilerplate template that provides a solid foundation for building eCommerce web applications. It includes out-of-the-box essential features such as:
 
@@ -9,13 +13,22 @@ The Blueprint Boilerplate is a full-stack eCommerce boilerplate template that pr
 
 This template also incorporates conditional rendering to differentiate between guest and logged-in user experiences.
 
-## <span style="color:indigo;">Demo</span>
+# Table of Contents
+
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Installation & Set-up](#installation-and-setup)
+- [Configuration](#configuration)
+- [Running Application](#running-the-application)
+- [Conclusion](#conclusion)
+
+## Demo
 
 ![LoginLoop](https://i.imgur.com/HOiTb5v.gif)
 
-## <span style="color:indigo;">Technologies Used</span>
+## Technologies Used
 
-### <span style="color:#ba69c8;">Front-end</span>
+### Front-end
 
 - React (v18.2.0)
 - React Router DOM (v6.11.0)
@@ -24,7 +37,7 @@ This template also incorporates conditional rendering to differentiate between g
 - axios (v1.4.0) for making HTTP requests
 - react-dom (v18.2.0) for rendering React components
 
-### <span style="color:#ba69c8;">Back-end</span>
+### Back-end
 
 - Express.js (v4.18.2) as the server framework
 - body-parser (v1.20.2) for parsing request bodies
@@ -34,7 +47,7 @@ This template also incorporates conditional rendering to differentiate between g
 - pg (v8.10.0) and pg-hstore (v2.3.4) for PostgreSQL database integration
 - sequelize (v6.31.0) as an ORM (Object-Relational Mapping) for database operations
 
-### <span style="color:#ba69c8;">Development</span>
+### Development
 
 - webpack (v5.81.0) for module bundling and asset management
 - webpack-dev-server (v4.13.3) for development server with hot module replacement
@@ -45,7 +58,7 @@ This template also incorporates conditional rendering to differentiate between g
 - Redux Logger (v3.0.6) for logging Redux actions and state changes during development
 - Redux Thunk (v2.4.2) for handling asynchronous actions with Redux
 
-## <span style="color:indigo;">Installation and Setup</span>
+## Installation and Setup
 
 To set up The Blueprint Boilerplate, follow these steps:
 
@@ -69,7 +82,7 @@ To set up The Blueprint Boilerplate, follow these steps:
    npm install
    ```
 
-## <span style="color:indigo;">Configuration</span>
+## Configuration
 
 1. Rename the project folder: Navigate to the root directory of the cloned project and rename the folder to the desired name of the project. This will update the project's directory name.
 
@@ -91,7 +104,7 @@ To set up The Blueprint Boilerplate, follow these steps:
 
 These steps will guide you in customizing the cloned project and making it your own, reflecting your project's specific details and requirements.
 
-## <span style="color:indigo;">Running the Application</span>
+## Running the Application
 
 To run the application, execute the following command:
 
@@ -105,7 +118,7 @@ Please note that you need to create a PostgreSQL database before running the app
 
 Once the application is running, you can access it at [http://localhost:1987](http://localhost:1987) in your browser.
 
-## <span style="color:indigo;">Conclusion</span>
+## Conclusion
 
 The Blueprint Boilerplate provides a robust foundation for developing full-stack web applications. With its pre-configured CRUD routes, authenticated routes, and connected forms, The Blueprint Boilerplate saves development time and provides a structured starting point for building feature-rich applications. It incorporates modern front-end technologies like React and Redux, enabling efficient state management and dynamic UI updates. On the back-end, Express.js and Sequelize simplify server-side development and interaction with the PostgreSQL database.
 
@@ -114,3 +127,7 @@ To customize the boilerplate to fit your specific application requirements, you 
 Feel free to explore the repository at [The Blueprint Boilerplate](https://github.com/cjones-87/TheBlueprintBoilerplate) for more information, documentation, and issue tracking.
 
 Happy coding with The Blueprint Boilerplate!
+
+<!-- Footer -->
+
+![footer](https://capsule-render.vercel.app/api?type=waving&color=0:301D42,10:553373,20:7a49a5,30:6D4194,40:A17FC0,50:C9B6DB,60:A17FC0,70:6D4194,80:7a49a5,90:553373,100:301D42&height=100&reversal=true&section=footer)
