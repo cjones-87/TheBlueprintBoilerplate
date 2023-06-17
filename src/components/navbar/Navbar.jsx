@@ -1,9 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import useWindowDimensions from '../../misc/customHooks/useWindowDimensions';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/auth/auth';
 import appLogo from 'public/favicon.ico';
 
 const Navbar = ({ children }) => {
+  const { height, width } = useWindowDimensions();
   const [burgerActive, setBurgerActive] = useState(false);
   const auth = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
@@ -25,7 +27,7 @@ const Navbar = ({ children }) => {
   };
 
   return (
-    <div className="navContainer">
+    <div className="navContainer" style={{ width }}>
       <nav className="navbar">
         <a className="navbarLogo" href="/">
           <img id="navbarLogo" src={appLogo} />
