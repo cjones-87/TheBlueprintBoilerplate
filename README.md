@@ -13,6 +13,7 @@
 - [Configuration](#configuration)
 - [Running Application](#running-the-application)
 - [Conclusion](#conclusion)
+- [Contact](#contact)
 
 ## About
 
@@ -130,6 +131,14 @@ To customize the boilerplate to fit your specific application requirements, you 
 Feel free to explore the repository at [The Blueprint Boilerplate](https://github.com/cjones-87/TheBlueprintBoilerplate) for more information, documentation, and issue tracking.
 
 Happy coding with The Blueprint Boilerplate!
+
+## Contact
+
+You can reach out to me via email at cj@seejonesengineer.com
+
+Connect with me on LinkedIn: https://www.linkedin.com/in/cjones1827/
+
+Visit my portfolio website: https://www.seejonesengineer.com/
 
 <!-- Footer -->
 
