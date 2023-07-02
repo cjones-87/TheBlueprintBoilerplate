@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import useWindowDimensions from '../../misc/customHooks/useWindowDimensions';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/auth/auth';
