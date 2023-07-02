@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const LineItem = db.define('LineItem', {
+const LineItem = db.define('lineitem', {
   price: {
     type: Sequelize.DECIMAL(10, 2),
     allowNull: false,
