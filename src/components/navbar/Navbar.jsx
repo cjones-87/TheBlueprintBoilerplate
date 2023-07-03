@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import useWindowDimensions from '../../misc/customHooks/useWindowDimensions';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/auth/auth';
-import appLogo from 'public/favicon.ico';
+import NavbarLogo from './NavbarLogo';
 
 const Navbar = ({ children }) => {
   const { height, width } = useWindowDimensions();
@@ -30,7 +30,7 @@ const Navbar = ({ children }) => {
     <div className="navContainer" style={{ width }}>
       <nav className="navbar">
         <a className="navbarLogo" href="/">
-          <img id="navbarLogo" src={appLogo} />
+          <NavbarLogo />
         </a>
 
         <ul className={`navMenu ${burgerActive ? 'active' : ''}`}>
