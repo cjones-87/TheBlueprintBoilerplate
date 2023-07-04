@@ -151,9 +151,10 @@ a {
   background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
   display: flex;
   justify-content: space-between;
-  min-height: 70px;
+  min-height: 4rem;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .navbarLogo {
@@ -174,9 +175,9 @@ a {
 .navMenu {
   align-items: center;
   display: flex;
-  gap: 60px;
-  justify-content: space-between;
-  padding-right: 1.25em;
+  gap: 5px;
+  justify-content: space-evenly;
+  padding-right: 2rem;
 }
 
 .navLink {
@@ -209,6 +210,23 @@ a {
   -webkit-transition: all 0.3s ease;
 }
 
+#navbarEnd {
+  align-items: center;
+  padding-right: 2rem;
+}
+
+#navbarStart {
+  align-items: center;
+  display: flex;
+  padding-left: 1rem;
+}
+
+#darkModeToggleButton {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+}
+
 @media (max-width: 768px) {
   .navbar {
     left: 0;
@@ -237,19 +255,25 @@ a {
     flex-direction: column;
     gap: 0;
     left: -120%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     position: fixed;
     text-align: center;
-    top: 40px;
+    top: 3rem;
     transition: 0.3s;
     width: 100%;
   }
 
   .navItem {
-    margin: 16px 0;
+    margin: 0.5rem 0;
   }
 
   .navMenu.active {
     left: -5%;
+  }
+
+  .barGroup {
+    padding-left: 1rem;
   }
 
   .formButton {
