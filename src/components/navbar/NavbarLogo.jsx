@@ -56,11 +56,7 @@ const NavbarLogo = () => {
     animate();
   });
 
-  return (
-    <div id="navbarLogoContainer">
-      <canvas id="navbarLogo" />
-    </div>
-  );
+  return <canvas id="navbarLogo" />;
 };
 
 export default NavbarLogo;
