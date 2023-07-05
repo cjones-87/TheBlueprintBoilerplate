@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from 'react';
-import useWindowDimensions from '../../misc/customHooks/useWindowDimensions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../store/auth/auth';
+import useWindowDimensions from '../../misc/customHooks/useWindowDimensions';
+import useTheme from '../../misc/customHooks/useTheme';
 
 const Navbar = ({ end, navLinks, start }) => {
   const { width } = useWindowDimensions();
+  const { darkMode } = useTheme();
   const [burgerActive, setBurgerActive] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,11 +33,29 @@ const Navbar = ({ end, navLinks, start }) => {
   };
 
   return (
-    <div className="navContainer" style={{ width }}>
+    <div
+      className="navContainer"
+      style={{
+        background: darkMode
+          ? 'radial-gradient(rgba(163, 0, 130, 1), rgba(75, 0, 130, 1))'
+          : 'radial-gradient(rgba(75, 0, 130, 1), rgba(163, 0, 130, 1))',
+        width,
+      }}
+    >
       <nav className="navbar">
         <div id="navbarStart">
           {start}
-          <ul className={`navMenu ${burgerActive ? 'active' : ''}`}>
+          <ul
+            className={`navMenu ${burgerActive ? 'active' : ''}`}
+            style={{
+              background:
+                width < 768
+                  ? darkMode
+                    ? 'radial-gradient(rgba(163, 0, 130, 1), rgba(75, 0, 130, 1))'
+                    : 'radial-gradient(rgba(75, 0, 130, 1), rgba(163, 0, 130, 1))'
+                  : '',
+            }}
+          >
             {navLinks.map((data, index) => (
               <li
                 className="navItem"
@@ -45,6 +65,11 @@ const Navbar = ({ end, navLinks, start }) => {
                 <button
                   className="navLink button"
                   onClick={() => handleNavLinkClick(data.href)}
+                  style={{
+                    backgroundColor: darkMode
+                      ? 'rgba(163, 0, 130, 1)'
+                      : 'rgba(75, 0, 130, 1)',
+                  }}
                 >
                   {data.content}
                 </button>
