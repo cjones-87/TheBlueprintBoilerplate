@@ -1,5 +1,4 @@
 body {
-  background: radial-gradient(indigo, rgba(163, 0, 130, 1));
   background-size: cover;
   height: 100vh;
   margin: 0;
@@ -92,7 +91,7 @@ body {
 
 .inputContainer input:focus + label {
   border-color: transparent !important;
-  color: indigo;
+  color: silver;
   font-size: 1rem;
   left: 10px;
   top: -10px;
@@ -148,7 +147,6 @@ a {
 
 .navbar {
   align-items: center;
-  background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
   display: flex;
   justify-content: space-between;
   min-height: 4rem;
@@ -162,27 +160,21 @@ a {
 }
 
 #navbarLogo {
-  border: 4px solid silver;
-  border-radius: 50%;
   height: 2.5em;
   width: 2.5em;
-}
-
-#navbarLogo:hover {
-  border: 4px solid dodgerblue;
 }
 
 .navMenu {
   align-items: center;
   display: flex;
-  gap: 5px;
+  gap: 1rem;
   justify-content: space-evenly;
   padding-right: 2rem;
 }
 
 .navLink {
   color: silver;
-  font-size: 1.75em;
+  font-size: 1.25rem;
   transition: 0.3s ease-out;
 }
 
@@ -221,13 +213,18 @@ a {
   padding-left: 1rem;
 }
 
+.navLink.button {
+  background-color: indigo;
+  border-radius: 25%;
+}
+
 #darkModeToggleButton {
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar {
     left: 0;
     position: sticky;
@@ -251,7 +248,6 @@ a {
   }
 
   .navMenu {
-    background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
     flex-direction: column;
     gap: 0;
     left: -120%;
