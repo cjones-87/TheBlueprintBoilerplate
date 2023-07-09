@@ -16,7 +16,7 @@ app.use('/api', require('./api'));
 app.use('/auth', require('./auth'));
 
 app.get('*', (req, res, next) =>
-  res.sendFile(path.join(__dirname, '..', '/public/index.html'))
+  res.sendFile(path.join(__dirname, '..', '/index.html'))
 );
 
 app.use((err, req, res, next) => {
