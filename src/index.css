@@ -204,13 +204,13 @@ a {
 
 #navbarEnd {
   align-items: center;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 
 #navbarStart {
   align-items: center;
   display: flex;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 .navLink.button {
