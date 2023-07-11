@@ -53,12 +53,8 @@ This template also incorporates conditional rendering to differentiate between g
 
 ### Development
 
-- webpack (v5.81.0) for module bundling and asset management
-- webpack-dev-server (v4.13.3) for development server with hot module replacement
-- babel-loader (v9.1.2) for transpiling JavaScript using Babel
-- css-loader (v6.7.3) and style-loader (v3.3.2) for handling CSS imports
-- file-loader (v6.2.0) for loading files and assets
-- @babel/core (v7.21.5) and related plugins/presets for JavaScript transpilation
+- vite (v4.4.2) for faster front-end development
+- @vitejs/plugin-react for configuring vite specifically for React development
 - Redux Logger (v3.0.6) for logging Redux actions and state changes during development
 - Redux Thunk (v2.4.2) for handling asynchronous actions with Redux
 
@@ -100,7 +96,7 @@ To set up The Blueprint Boilerplate, follow these steps:
    - "homepage": Update the homepage URL to reflect the new project's homepage if applicable.
    - Update any other relevant fields that contain project-specific information.
 
-3. Update configuration files: Check for any other configuration files in the project that may contain project-specific information, such as .env files, webpack configuration files, or database configuration files. Update these files with the necessary changes, such as database connection details, API endpoints, or environment variables.
+3. Update configuration files: Check for any other configuration files in the project that may contain project-specific information, such as .env files, vite configuration files, or database configuration files. Update these files with the necessary changes, such as database connection details, API endpoints, or environment variables.
 
 4. Customize the code: Review the codebase and make any necessary modifications to adapt it to the new project name. This may include renaming variables, components, or files, updating file headers, or making other relevant changes to align with the new project name.
 
@@ -116,7 +112,7 @@ To run the application, execute the following command:
 npm run start:dev
 ```
 
-This command will start the development server using webpack-dev-server, run the backend server using nodemon, and trigger the initial build using npm run build.
+This command will start the development server using vite, run the backend server using nodemon, and trigger the initial build using npm run build.
 
 Please note that you need to create a PostgreSQL database before running the application. Make sure to update the database configuration in the backend code accordingly.
 
