@@ -5,13 +5,23 @@ export default defineConfig({
   base: '/',
   build: {
     rollupOptions: {
-      manualChunks: {
-        vendor: Object.keys(require('./package.json').dependencies),
+      output: {
+        manualChunks: {
+          vendor: Object.keys(require('./package.json').dependencies),
+        },
       },
     },
   },
   plugins: [react()],
   server: {
     port: 1987,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:1992',
+      },
+      '/auth': {
+        target: 'http://localhost:1992',
+      },
+    },
   },
 });
