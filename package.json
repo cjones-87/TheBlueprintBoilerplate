@@ -6,9 +6,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "start:dev": "vite && npm run start:server",
-    "start:server": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "npm start & npm run start:server",
+    "start:server": "nodemon server"
   },
   "repository": {
     "type": "git",
