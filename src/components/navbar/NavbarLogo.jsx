@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
-import favicon from '../../../public/favicon.ico';
 
 const NavbarLogo = () => {
   useEffect(() => {
+    const favicon = 'https://i.imgur.com/iMSa9b0.png';
+
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(50, 1, 1, 1000);
