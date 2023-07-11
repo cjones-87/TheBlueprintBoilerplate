@@ -1,13 +1,13 @@
 const { db } = require('./db');
 const app = require('./app');
 require('dotenv').config();
-const port = process.env.PORT || 1987;
+const port = process.env.PORT || 1992;
 
 const init = async () => {
   try {
     await db.sync().then(() => {
       console.log(
-        `Knock, knock...\nWho's there?\nYour server, listening on port ${port}`
+        `Knock, knock...\nWho's there?\nYour express server, listening on port ${port}`
       );
 
       app.listen(port);
