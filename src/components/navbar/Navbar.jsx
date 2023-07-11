@@ -27,6 +27,7 @@ const Navbar = ({ end, navLinks, start }) => {
   const handleLogout = () => {
     try {
       dispatch(logout());
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
